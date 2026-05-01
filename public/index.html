@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LiveChannel</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="/">LiveChannel</a>
+      <div class="header-actions">
+        <button id="syncButton" class="secondary hidden" type="button">Sync subscriptions</button>
+        <button id="notifyButton" class="secondary hidden" type="button">Enable notifications</button>
+        <a id="loginButton" class="primary hidden" href="/auth/login">Sign in with Google</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="player-section">
+        <div class="toolbar">
+          <span id="modePill" class="mode-pill">Fresh</span>
+          <span id="statusText" class="status-text">Loading</span>
+        </div>
+        <div class="player-shell">
+          <div id="player"></div>
+          <div id="emptyState" class="empty-state hidden">
+            <p>No videos ready.</p>
+            <button id="devSeedButton" class="secondary" type="button">Seed demo</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="now-card">
+          <p class="eyebrow">Now playing</p>
+          <img id="currentThumb" class="thumb hidden" alt="" />
+          <h1 id="currentTitle">LiveChannel</h1>
+          <p id="currentChannel" class="muted">Sign in to begin.</p>
+        </section>
+
+        <section class="next-section">
+          <p class="eyebrow">Next</p>
+          <ol id="nextList" class="next-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

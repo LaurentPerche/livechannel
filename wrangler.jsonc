@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "livechannel",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-30",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/auth/*"]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "USERS_KV",
+      "id": "REPLACE_WITH_USERS_KV_ID"
+    },
+    {
+      "binding": "VIDEOS_KV",
+      "id": "REPLACE_WITH_VIDEOS_KV_ID"
+    },
+    {
+      "binding": "PUSH_KV",
+      "id": "REPLACE_WITH_PUSH_KV_ID"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "USER_SCHEDULER",
+        "class_name": "UserScheduler"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["UserScheduler"]
+    }
+  ],
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  },
+  "vars": {
+    "ENVIRONMENT": "development"
+  }
+}
