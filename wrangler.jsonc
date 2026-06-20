@@ -11,15 +11,15 @@
   "kv_namespaces": [
     {
       "binding": "USERS_KV",
-      "id": "REPLACE_WITH_USERS_KV_ID"
+      "id": "bf1607a3a78947c083de787ae04a2c57"
     },
     {
       "binding": "VIDEOS_KV",
-      "id": "REPLACE_WITH_VIDEOS_KV_ID"
+      "id": "4fa673fa6673463b84f3507d47749335"
     },
     {
       "binding": "PUSH_KV",
-      "id": "REPLACE_WITH_PUSH_KV_ID"
+      "id": "25f8aca597e6472d9cc629fc8a08ceba"
     }
   ],
   "durable_objects": {
