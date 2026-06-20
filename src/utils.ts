@@ -124,7 +124,7 @@ async function hmac(secret: string, value: string): Promise<string> {
 
 export function getSessionSecret(env: Env): string {
   if (env.SESSION_SECRET) return env.SESSION_SECRET;
-  if (env.ENVIRONMENT === "development") return "livechannel-development-session-secret";
+  if (env.ENVIRONMENT === "development") return "driftyt-development-session-secret";
   throw new Error("SESSION_SECRET is not configured");
 }
 

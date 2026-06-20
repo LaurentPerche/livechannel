@@ -7,7 +7,7 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("push", (event) => {
-  event.waitUntil(showLiveChannelNotification(event));
+  event.waitUntil(showDriftYTNotification(event));
 });
 
 self.addEventListener("notificationclick", (event) => {
@@ -30,7 +30,7 @@ self.addEventListener("notificationclick", (event) => {
   );
 });
 
-async function showLiveChannelNotification(event) {
+async function showDriftYTNotification(event) {
   let payload = null;
 
   if (event.data) {
@@ -55,7 +55,7 @@ async function showLiveChannelNotification(event) {
     data: {
       url: payload.url || `/?jumpVideoId=${encodeURIComponent(payload.videoId)}`
     },
-    tag: `livechannel-${payload.videoId}`,
+    tag: `driftyt-${payload.videoId}`,
     renotify: true
   });
 }

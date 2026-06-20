@@ -93,7 +93,7 @@ async function createVapidJwt(env: Env, endpoint: string): Promise<string> {
     JSON.stringify({
       aud: audience,
       exp: Math.floor(Date.now() / 1000) + 12 * 60 * 60,
-      sub: "mailto:notifications@livechannel.example"
+      sub: "mailto:notifications@driftyt.example"
     })
   );
   const signingInput = `${header}.${claims}`;

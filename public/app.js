@@ -258,7 +258,7 @@ function showLoggedOut() {
   els.syncButton.classList.add("hidden");
   els.notifyButton.classList.add("hidden");
   els.statusText.textContent = "Signed out";
-  els.currentTitle.textContent = "LiveChannel";
+  els.currentTitle.textContent = "DriftYT";
   els.currentChannel.textContent = "Sign in to begin.";
   els.emptyState.classList.remove("hidden");
 }

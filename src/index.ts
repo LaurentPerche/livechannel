@@ -162,7 +162,7 @@ async function schedulerFetch(env: Env, userId: string, path: string, init: Requ
     headers.set("content-type", "application/json");
   }
 
-  return stub.fetch(`https://livechannel-scheduler${path}`, { ...init, headers });
+  return stub.fetch(`https://driftyt-scheduler${path}`, { ...init, headers });
 }
 
 async function pollActiveUsers(env: Env): Promise<void> {
@@ -212,7 +212,7 @@ async function seedDevelopmentUser(request: Request, env: Env): Promise<Response
   const user: User = {
     id: userId,
     googleSub: "dev-google-sub",
-    email: "dev@livechannel.local",
+    email: "dev@driftyt.local",
     accessToken: "dev-access-token",
     refreshToken: "dev-refresh-token",
     tokenExpiry: Date.now() + 60 * 60 * 1000,
@@ -277,7 +277,7 @@ function makeSeedVideos(now: Date): Video[] {
       channelId: channel.channelId,
       channelTitle: channel.channelTitle,
       title: `${index < 3 ? "Fresh" : "Catch-up"} sample ${index + 1}`,
-      description: "Development seed video for the LiveChannel playback loop.",
+      description: "Development seed video for the DriftYT playback loop.",
       thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
       publishedAt,
       detectedAt: now.toISOString()

@@ -1,12 +1,12 @@
-# LiveChannel
+# DriftYT
 
-LiveChannel turns a user’s YouTube subscriptions into a continuous personal video channel. The user signs in with Google, syncs YouTube subscriptions, presses play once, and watches a scheduled stream from creators they already follow.
+DriftYT turns a user’s YouTube subscriptions into a continuous personal video channel. The user signs in with Google, syncs YouTube subscriptions, presses play once, and watches a scheduled stream from creators they already follow.
 
 The v1 product loop is:
 
 sign in -> sync subscriptions -> press play -> continuous channel -> new upload notification -> Watch now -> drop current video -> recalculate forward
 
-LiveChannel embeds YouTube videos with the YouTube IFrame Player API. It does not restream, proxy, download, or redistribute YouTube videos.
+DriftYT embeds YouTube videos with the YouTube IFrame Player API. It does not restream, proxy, download, or redistribute YouTube videos.
 
 ## Architecture
 
@@ -133,7 +133,7 @@ In Google Cloud Console:
 
 1. Create an OAuth client for a web application.
 2. Add `http://localhost:8787/auth/callback` for local development.
-3. Add your deployed Worker callback URL, for example `https://livechannel.<account>.workers.dev/auth/callback`.
+3. Add your deployed Worker callback URL, for example `https://driftyt.<account>.workers.dev/auth/callback`.
 4. Enable these scopes:
    - `openid`
    - `email`
@@ -144,7 +144,7 @@ OAuth tokens are stored server-side only in KV and never exposed to the frontend
 
 ## YouTube API Setup
 
-Enable YouTube Data API v3 and create an API key. LiveChannel uses:
+Enable YouTube Data API v3 and create an API key. DriftYT uses:
 
 - `subscriptions.list` with the user OAuth token.
 - `channels.list` to find each channel uploads playlist.
